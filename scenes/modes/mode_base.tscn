@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv0k7hheodjgp"]
+
+[ext_resource type="Script" uid="uid://c1pm4fhweffgs" path="res://scenes/modes/mode.gd" id="1_wbwlf"]
+[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/darkworld.tscn" id="2_aqdyx"]
+
+[node name="mode_base" type="Node"]
+script = ExtResource("1_wbwlf")
+
+[node name="darkworld" parent="." instance=ExtResource("2_aqdyx")]
