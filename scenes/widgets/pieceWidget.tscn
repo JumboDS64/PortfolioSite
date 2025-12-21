@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://ijx64baoqagd"]
+
+[ext_resource type="Script" uid="uid://86qx0cqkrnw5" path="res://scenes/widgets/pieceWidget.gd" id="1_ct12n"]
+
+[node name="pieceWidget" type="Control"]
+custom_minimum_size = Vector2(240, 200)
+layout_direction = 2
+layout_mode = 3
+offset_right = 240.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ct12n")
+
+[node name="thumbnail" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="texture_rect" type="TextureRect" parent="thumbnail"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -56.0
+offset_right = 120.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Placeholdere"
+horizontal_alignment = 1
+autowrap_mode = 3

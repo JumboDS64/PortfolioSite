@@ -4,7 +4,10 @@ var mode:Mode
 
 func _ready():
 	mode = $mode_none
-	set_mode("base")
+	Global.sort_pieces()
+	#print(Global.piecesSorted_project)
+	#print(Global.piecesSorted_skill)
+	set_mode("universe_null")
 	
 func set_mode(path):
 	remove_child(mode)
