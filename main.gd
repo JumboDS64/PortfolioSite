@@ -4,7 +4,7 @@ var mode:Mode
 
 func _ready():
 	mode = $mode_none
-	Global.sort_pieces()
+	Global.load_data()
 	#print(Global.piecesSorted_project)
 	#print(Global.piecesSorted_skill)
 	set_mode("universe_null")
