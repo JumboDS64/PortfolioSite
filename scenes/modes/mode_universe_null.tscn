@@ -16,3 +16,13 @@ texture = ExtResource("3_t244s")
 
 [node name="universe_menu" parent="." instance=ExtResource("2_egq6i")]
 tag = "null"
+
+[node name="focusFade" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

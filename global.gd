@@ -9,6 +9,7 @@ var categories_skill:Dictionary
 
 const WINDOW_WIDTH = 1152
 const WINDOW_HEIGHT = 648
+const WINDOW_CENTER = Vector2(Global.WINDOW_WIDTH/2.0, Global.WINDOW_HEIGHT/2.0)
 const TWO_PI = PI*2
 
 var PATH_MODES = "res://scenes/modes/"
@@ -22,6 +23,8 @@ var time = 0
 func _ready():
 	MAIN = get_node("/root/main")
 	time = 0
+func mode():
+	return MAIN.mode
 
 func _process(delta):
 	time += delta

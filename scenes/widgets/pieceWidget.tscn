@@ -20,8 +20,6 @@ offset_left = -64.0
 offset_top = 8.0
 offset_right = 64.0
 offset_bottom = 136.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="texture_rect" type="TextureRect" parent="thumbnail"]
 layout_mode = 1
@@ -49,3 +47,5 @@ grow_vertical = 0
 text = "Placeholdere"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[connection signal="gui_input" from="thumbnail/texture_rect" to="." method="_on_texture_rect_gui_input"]
