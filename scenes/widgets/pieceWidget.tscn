@@ -6,6 +6,7 @@
 custom_minimum_size = Vector2(240, 200)
 layout_direction = 2
 layout_mode = 3
+anchors_preset = 0
 offset_right = 240.0
 offset_bottom = 200.0
 grow_horizontal = 2
@@ -14,6 +15,7 @@ script = ExtResource("1_ct12n")
 
 [node name="thumbnail" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -64.0

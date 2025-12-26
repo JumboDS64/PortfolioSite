@@ -35,12 +35,14 @@ func tween_focus():
 	Global.mode().focusFade.visible = true
 	tween = get_tree().create_tween()
 	tween.set_trans(Tween.TransitionType.TRANS_QUART)
+	tween.set_ease(Tween.EaseType.EASE_OUT)
 	tween.tween_property(thumb, "position", Global.WINDOW_CENTER-Vector2(64*TWEENSCALE,64*TWEENSCALE), TWEENTIME)
 	tween.parallel().tween_property(thumb, "scale", Vector2(TWEENSCALE,TWEENSCALE), TWEENTIME)
 	tween.parallel().tween_property(Global.mode().focusFade, "color", Color(0.0, 0.0, 0.0, 0.25), TWEENTIME)
 func tween_unfocus():
 	tween = get_tree().create_tween()
 	tween.set_trans(Tween.TransitionType.TRANS_QUART)
+	tween.set_ease(Tween.EaseType.EASE_OUT)
 	tween.tween_property(thumb, "position", global_position+Vector2(56.0, 8.0), TWEENTIME)
 	tween.parallel().tween_property(thumb, "scale", Vector2(1.0, 1.0), TWEENTIME)
 	tween.parallel().tween_property(Global.mode().focusFade, "color", Color(0.0, 0.0, 0.0, 0.0), TWEENTIME)

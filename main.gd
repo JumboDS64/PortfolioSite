@@ -7,7 +7,7 @@ func _ready():
 	Global.load_data()
 	#print(Global.piecesSorted_project)
 	#print(Global.piecesSorted_skill)
-	set_mode("universe_null")
+	set_mode("selectProject")
 	
 func set_mode(path):
 	remove_child(mode)

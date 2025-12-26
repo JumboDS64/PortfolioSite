@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0bvukphyye4y"]
 
-[ext_resource type="Script" uid="uid://b7xyfmbiytdwf" path="res://scenes/widgets/universe_menu.gd" id="1_camx2"]
+[ext_resource type="Script" uid="uid://b7xyfmbiytdwf" path="res://scenes/widgets/category_menu.gd" id="1_camx2"]
 [ext_resource type="Theme" uid="uid://n5ipliavk46y" path="res://assets/themes/theme_base.tres" id="2_tai5y"]
 
-[node name="universe_menu" type="Control"]
+[node name="category_menu" type="Control"]
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.79

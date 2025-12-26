@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3ifx0l53kpqj"]
 
-[ext_resource type="Script" uid="uid://dw6p7w4w3268s" path="res://scenes/modes/mode_universe.gd" id="1_ep24m"]
+[ext_resource type="Script" uid="uid://dw6p7w4w3268s" path="res://scenes/modes/mode_category.gd" id="1_ep24m"]
 [ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/darkworld.tscn" id="2_37gao"]
-[ext_resource type="PackedScene" uid="uid://d0bvukphyye4y" path="res://scenes/widgets/universe_menu.tscn" id="2_egq6i"]
+[ext_resource type="PackedScene" uid="uid://d0bvukphyye4y" path="res://scenes/widgets/category_menu.tscn" id="2_egq6i"]
 [ext_resource type="Texture2D" uid="uid://bwttxk4k7px5k" path="res://assets/themes/universe_base.png" id="3_t244s"]
 
-[node name="mode_universe_null" type="Node"]
+[node name="mode_category_null" type="Node"]
 script = ExtResource("1_ep24m")
 
 [node name="darkworld" parent="." instance=ExtResource("2_37gao")]
 
-[node name="universe_base" type="Sprite2D" parent="."]
+[node name="category_base" type="Sprite2D" parent="."]
 position = Vector2(576, 256)
 texture = ExtResource("3_t244s")
 
-[node name="universe_menu" parent="." instance=ExtResource("2_egq6i")]
+[node name="category_menu" parent="." instance=ExtResource("2_egq6i")]
 tag = "null"
 
 [node name="focusFade" type="ColorRect" parent="."]

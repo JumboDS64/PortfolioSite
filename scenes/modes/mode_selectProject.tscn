@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce8gwym5rlmy8"]
+
+[ext_resource type="Script" uid="uid://61uakgsmmwx0" path="res://scenes/modes/mode_selectProject.gd" id="1_bow8e"]
+[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/darkworld.tscn" id="2_e6j50"]
+[ext_resource type="Script" uid="uid://bkx7ndiwnuljv" path="res://scenes/modes/cameraScroll.gd" id="3_1qo12"]
+[ext_resource type="PackedScene" uid="uid://bh8kv4aela35l" path="res://scenes/entities_multiverse/universe.tscn" id="3_v0ywi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v0ywi"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1qo12"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w2oxa"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hksgq"]
+
+[node name="mode_selectProject" type="Node"]
+script = ExtResource("1_bow8e")
+
+[node name="camera_2d" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="darkworld" parent="camera_2d" instance=ExtResource("2_e6j50")]
+position = Vector2(-576, -324)
+
+[node name="scroll_left" type="StaticBody2D" parent="camera_2d" node_paths=PackedStringArray("camera")]
+position = Vector2(-480, 0)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_1qo12")
+vec = Vector2(-1, 0)
+camera = NodePath("..")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="camera_2d/scroll_left"]
+shape = SubResource("WorldBoundaryShape2D_v0ywi")
+
+[node name="scroll_right" type="StaticBody2D" parent="camera_2d" node_paths=PackedStringArray("camera")]
+position = Vector2(480, 0)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_1qo12")
+vec = Vector2(1, 0)
+camera = NodePath("..")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="camera_2d/scroll_right"]
+shape = SubResource("WorldBoundaryShape2D_1qo12")
+
+[node name="scroll_up" type="StaticBody2D" parent="camera_2d" node_paths=PackedStringArray("camera")]
+position = Vector2(0, -228)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_1qo12")
+vec = Vector2(0, -1)
+camera = NodePath("..")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="camera_2d/scroll_up"]
+shape = SubResource("WorldBoundaryShape2D_w2oxa")
+
+[node name="scroll_down" type="StaticBody2D" parent="camera_2d" node_paths=PackedStringArray("camera")]
+position = Vector2(0, 228)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_1qo12")
+vec = Vector2(0, 1)
+camera = NodePath("..")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="camera_2d/scroll_down"]
+shape = SubResource("WorldBoundaryShape2D_hksgq")
+
+[node name="universe" parent="." instance=ExtResource("3_v0ywi")]
+position = Vector2(576, 324)
+category = "null"
+
+[connection signal="mouse_entered" from="camera_2d/scroll_left" to="camera_2d/scroll_left" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="camera_2d/scroll_left" to="camera_2d/scroll_left" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="camera_2d/scroll_right" to="camera_2d/scroll_right" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="camera_2d/scroll_right" to="camera_2d/scroll_right" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="camera_2d/scroll_up" to="camera_2d/scroll_up" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="camera_2d/scroll_up" to="camera_2d/scroll_up" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="camera_2d/scroll_down" to="camera_2d/scroll_down" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="camera_2d/scroll_down" to="camera_2d/scroll_down" method="_on_mouse_exited"]

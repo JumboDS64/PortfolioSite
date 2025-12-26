@@ -11,6 +11,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0ibk5"]
 shader = ExtResource("2_25lfg")
 shader_parameter/darksurface = ExtResource("6_h3pja")
+shader_parameter/cam_ = Vector2(0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2v7wt"]
 size = Vector2(1152, 648)
@@ -20,6 +21,7 @@ shader = ExtResource("2_uy8s7")
 shader_parameter/darkclouds1 = ExtResource("3_ij8v3")
 shader_parameter/darkclouds2 = ExtResource("4_vjurf")
 shader_parameter/darkclouds3 = ExtResource("5_0lmsw")
+shader_parameter/cam_ = Vector2(0, 0)
 
 [node name="darkworld" type="Node2D"]
 script = ExtResource("1_2v7wt")

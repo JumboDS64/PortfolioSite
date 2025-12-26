@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh8kv4aela35l"]
+
+[ext_resource type="Script" uid="uid://dyks5l2mrenew" path="res://scenes/entities_multiverse/universe.gd" id="1_72fdd"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_72fdd"]
+size = Vector2(192, 192)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_72fdd"]
+radius = 96.0
+
+[node name="universe" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_72fdd")
+
+[node name="sprite_2d" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_72fdd")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_72fdd")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
