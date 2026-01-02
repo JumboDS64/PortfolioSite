@@ -8,7 +8,6 @@ func _ready():
 	input_pickable = true
 
 func _on_mouse_entered() -> void:
-	print(name)
 	isMouse = true
 
 func _on_mouse_exited() -> void:

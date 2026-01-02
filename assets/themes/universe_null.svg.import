@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b18okivefhico"
-path="res://.godot/imported/universe_base.svg-95f5840a696ec5938487be1775816c30.ctex"
+path="res://.godot/imported/universe_null.svg-fd3cf6c24eb14dd07d7b461fb95d7dd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/themes/universe_base.svg"
-dest_files=["res://.godot/imported/universe_base.svg-95f5840a696ec5938487be1775816c30.ctex"]
+source_file="res://assets/themes/universe_null.svg"
+dest_files=["res://.godot/imported/universe_null.svg-fd3cf6c24eb14dd07d7b461fb95d7dd3.ctex"]
 
 [params]
 

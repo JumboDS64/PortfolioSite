@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv58ctlyt1hcr"
-path="res://.godot/imported/universe_base.svg.2025_12_21_22_06_51.2.svg-60fc5309bec7a83242a1c8ea3de7fe16.ctex"
+uid="uid://bwttxk4k7px5k"
+path="res://.godot/imported/universe_null.png-26e8b9e2d563b6939f0a9f41c8f83dd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/themes/universe_base.svg.2025_12_21_22_06_51.2.svg"
-dest_files=["res://.godot/imported/universe_base.svg.2025_12_21_22_06_51.2.svg-60fc5309bec7a83242a1c8ea3de7fe16.ctex"]
+source_file="res://assets/themes/universe_null.png"
+dest_files=["res://.godot/imported/universe_null.png-26e8b9e2d563b6939f0a9f41c8f83dd1.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
