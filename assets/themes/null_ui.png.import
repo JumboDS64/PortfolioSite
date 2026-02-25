@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b18okivefhico"
-path="res://.godot/imported/universe_null.svg-fd3cf6c24eb14dd07d7b461fb95d7dd3.ctex"
+uid="uid://drba8berdvhsl"
+path="res://.godot/imported/null_ui.png-66292dccf78ea38deca8e2b7cadf35d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/themes/universe_null.svg"
-dest_files=["res://.godot/imported/universe_null.svg-fd3cf6c24eb14dd07d7b461fb95d7dd3.ctex"]
+source_file="res://assets/themes/null_ui.png"
+dest_files=["res://.godot/imported/null_ui.png-66292dccf78ea38deca8e2b7cadf35d1.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

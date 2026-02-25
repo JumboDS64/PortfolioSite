@@ -16,7 +16,7 @@ func _ready():
 	desc = $desc
 	imageViewCont = $imageViewCont
 	imageAnchor = $imageViewCont/imageView/imageAnchor
-	$back.texture = load("res://assets/themes/universe_"+tag+".png")
+	$frame.texture = load("res://assets/themes/"+tag+"_ui.png")
 	var list_pie = getData_pieces()
 	var list_cat = getData_category()
 	var counter = 0
@@ -48,3 +48,9 @@ func focusPiece(piece):
 func unfocusPiece():
 	focusedPiece.tween_unfocus()
 	focusedPiece = null
+
+func _on_button_back_pressed() -> void:
+	if(focusedPiece != null):
+		unfocusPiece()
+	else:
+		Global.MAIN.set_mode("mainmenu")

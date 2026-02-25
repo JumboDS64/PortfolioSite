@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0bvukphyye4y"]
+[gd_scene format=3 uid="uid://d0bvukphyye4y"]
 
 [ext_resource type="Script" uid="uid://b7xyfmbiytdwf" path="res://scenes/widgets/category_menu.gd" id="1_camx2"]
 [ext_resource type="Theme" uid="uid://n5ipliavk46y" path="res://assets/themes/theme_base.tres" id="2_tai5y"]
-[ext_resource type="Texture2D" uid="uid://bwttxk4k7px5k" path="res://assets/themes/universe_null.png" id="3_ck6t1"]
+[ext_resource type="Texture2D" uid="uid://drba8berdvhsl" path="res://assets/themes/null_ui.png" id="3_hjhfu"]
+[ext_resource type="Texture2D" uid="uid://db2x4h50eusdo" path="res://assets/themes/null_back.png" id="4_hjhfu"]
 
-[node name="category_menu" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwf11"]
+atlas = ExtResource("4_hjhfu")
+region = Rect2(0, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx0jx"]
+atlas = ExtResource("4_hjhfu")
+region = Rect2(224, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgptu"]
+atlas = ExtResource("4_hjhfu")
+region = Rect2(112, 0, 112, 112)
+
+[node name="category_menu" type="Control" unique_id=514674876]
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.79
@@ -14,31 +27,31 @@ grow_vertical = 2
 theme = ExtResource("2_tai5y")
 script = ExtResource("1_camx2")
 
-[node name="back" type="TextureRect" parent="."]
+[node name="frame" type="TextureRect" parent="." unique_id=1855446673]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_ck6t1")
+texture = ExtResource("3_hjhfu")
 
-[node name="piecesCont" type="ScrollContainer" parent="."]
+[node name="piecesCont" type="ScrollContainer" parent="." unique_id=1348367193]
 layout_mode = 0
 offset_left = 352.0
 offset_top = 32.0
 offset_right = 1120.0
 offset_bottom = 480.0
 
-[node name="control" type="GridContainer" parent="piecesCont"]
+[node name="control" type="GridContainer" parent="piecesCont" unique_id=1420713356]
 layout_mode = 2
 columns = 3
 
-[node name="desc" type="RichTextLabel" parent="."]
+[node name="desc" type="RichTextLabel" parent="." unique_id=915142576]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 160.0
 offset_right = 304.0
-offset_bottom = 480.0
+offset_bottom = 392.0
 
-[node name="imageViewCont" type="ScrollContainer" parent="."]
+[node name="imageViewCont" type="ScrollContainer" parent="." unique_id=2015997397]
 visible = false
 layout_mode = 0
 offset_left = 352.0
@@ -46,13 +59,23 @@ offset_top = 32.0
 offset_right = 1120.0
 offset_bottom = 480.0
 
-[node name="imageView" type="Control" parent="imageViewCont"]
+[node name="imageView" type="Control" parent="imageViewCont" unique_id=1294570223]
 layout_mode = 2
 
-[node name="imageAnchor" type="Control" parent="imageViewCont/imageView"]
-layout_mode = 2
+[node name="imageAnchor" type="Control" parent="imageViewCont/imageView" unique_id=1520151895]
 anchors_preset = 0
 offset_left = 384.0
 offset_top = 224.0
 offset_right = 384.0
 offset_bottom = 224.0
+
+[node name="button_back" type="TextureButton" parent="." unique_id=1014236856]
+layout_mode = 0
+offset_top = 400.0
+offset_right = 112.0
+offset_bottom = 512.0
+texture_normal = SubResource("AtlasTexture_nwf11")
+texture_pressed = SubResource("AtlasTexture_hx0jx")
+texture_hover = SubResource("AtlasTexture_hgptu")
+
+[connection signal="pressed" from="button_back" to="." method="_on_button_back_pressed"]

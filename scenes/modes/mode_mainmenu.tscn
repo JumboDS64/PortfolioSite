@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ce8gwym5rlmy8"]
+
+[ext_resource type="Script" uid="uid://61uakgsmmwx0" path="res://scenes/modes/mode_mainmenu.gd" id="1_x4u1v"]
+[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/darkworld.tscn" id="2_aiyik"]
+[ext_resource type="Script" uid="uid://ccmefr0i6tmtw" path="res://scenes/modes/selbar.gd" id="3_shc7w"]
+[ext_resource type="PackedScene" uid="uid://bh8kv4aela35l" path="res://scenes/entities_multiverse/universe.tscn" id="4_2qnw0"]
+
+[node name="mode_mainmenu" type="Node" unique_id=1110705265]
+script = ExtResource("1_x4u1v")
+
+[node name="camera_2d" type="Camera2D" parent="." unique_id=925793332]
+z_index = 4096
+position = Vector2(576, 324)
+
+[node name="darkworld" parent="camera_2d" unique_id=1830379688 instance=ExtResource("2_aiyik")]
+z_as_relative = false
+position = Vector2(-576, -324)
+
+[node name="button_skills" type="Button" parent="camera_2d" unique_id=73695524]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -311.5
+offset_right = 28.0
+offset_bottom = -280.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Skills
+"
+
+[node name="button_projects" type="Button" parent="camera_2d" unique_id=153298330]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 280.5
+offset_right = 28.0
+offset_bottom = 311.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Projects"
+
+[node name="selbar_skills" type="Node2D" parent="." unique_id=1598485709]
+position = Vector2(576, 324)
+script = ExtResource("3_shc7w")
+
+[node name="universe" parent="selbar_skills" unique_id=1338072341 instance=ExtResource("4_2qnw0")]
+category = "null"
+
+[node name="universe2" parent="selbar_skills" unique_id=1027847354 instance=ExtResource("4_2qnw0")]
+position = Vector2(256, 0)
+category = "null"
+
+[node name="universe3" parent="selbar_skills" unique_id=111385462 instance=ExtResource("4_2qnw0")]
+position = Vector2(512, 0)
+category = "null"
+
+[node name="selbar_projects" type="Node2D" parent="." unique_id=608989004]
+position = Vector2(576, 964)
+script = ExtResource("3_shc7w")
+
+[node name="universe" parent="selbar_projects" unique_id=1129693761 instance=ExtResource("4_2qnw0")]
+category = "null"
+
+[connection signal="pressed" from="camera_2d/button_skills" to="." method="pressSkills"]
+[connection signal="pressed" from="camera_2d/button_projects" to="." method="pressProjects"]
