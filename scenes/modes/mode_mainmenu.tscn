@@ -52,10 +52,12 @@ category = "null"
 
 [node name="universe2" parent="selbar_skills" unique_id=1027847354 instance=ExtResource("4_2qnw0")]
 position = Vector2(256, 0)
+scale = Vector2(0.5, 0.5)
 category = "null"
 
 [node name="universe3" parent="selbar_skills" unique_id=111385462 instance=ExtResource("4_2qnw0")]
 position = Vector2(512, 0)
+scale = Vector2(0.5, 0.5)
 category = "null"
 
 [node name="selbar_projects" type="Node2D" parent="." unique_id=608989004]
@@ -64,6 +66,9 @@ script = ExtResource("3_shc7w")
 
 [node name="universe" parent="selbar_projects" unique_id=1129693761 instance=ExtResource("4_2qnw0")]
 category = "null"
+
+[node name="marker_2d" type="Marker2D" parent="." unique_id=1157589500]
+position = Vector2(712, 320)
 
 [connection signal="pressed" from="camera_2d/button_skills" to="." method="pressSkills"]
 [connection signal="pressed" from="camera_2d/button_projects" to="." method="pressProjects"]
