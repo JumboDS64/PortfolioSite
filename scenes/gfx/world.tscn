@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://df0xomm3hogj5"]
+
+[ext_resource type="Script" uid="uid://qleyku1biwj" path="res://scenes/gfx/world.gd" id="1_2v7wt"]
+[ext_resource type="Shader" uid="uid://cjbhtp2acbur2" path="res://scenes/gfx/surface.gdshader" id="2_25lfg"]
+[ext_resource type="Shader" uid="uid://d3jxag4kpd76x" path="res://scenes/gfx/clouds.gdshader" id="2_uy8s7"]
+[ext_resource type="Texture2D" uid="uid://bletkv7ih1an5" path="res://assets/darkclouds1.png" id="3_ij8v3"]
+[ext_resource type="Texture2D" uid="uid://6a57hduxg6a4" path="res://assets/lightsurface.png" id="4_n7f5c"]
+[ext_resource type="Texture2D" uid="uid://drn52k8afgshw" path="res://assets/darkclouds2.png" id="4_vjurf"]
+[ext_resource type="Texture2D" uid="uid://cwd8lw2xgxtyl" path="res://assets/darkclouds3.png" id="5_0lmsw"]
+[ext_resource type="Texture2D" uid="uid://cuo1vfwjc4lti" path="res://assets/darksurface.png" id="6_h3pja"]
+[ext_resource type="Texture2D" uid="uid://bqcqgw86xkk6d" path="res://assets/blank.png" id="9_7f42t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ibk5"]
+shader = ExtResource("2_25lfg")
+shader_parameter/darksurface = ExtResource("6_h3pja")
+shader_parameter/lightsurface = ExtResource("4_n7f5c")
+shader_parameter/surfaceMorph = 0.0
+shader_parameter/cam_ = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij8v3"]
+shader = ExtResource("2_uy8s7")
+shader_parameter/darkclouds1 = ExtResource("3_ij8v3")
+shader_parameter/darkclouds2 = ExtResource("4_vjurf")
+shader_parameter/darkclouds3 = ExtResource("5_0lmsw")
+shader_parameter/cam_ = Vector2(0, 0)
+
+[node name="world" type="Node2D" unique_id=1289579862]
+script = ExtResource("1_2v7wt")
+
+[node name="surface" type="Sprite2D" parent="." unique_id=1107932959]
+material = SubResource("ShaderMaterial_0ibk5")
+position = Vector2(576, 324)
+texture = ExtResource("9_7f42t")
+
+[node name="clouds" type="Sprite2D" parent="." unique_id=1216761619]
+material = SubResource("ShaderMaterial_ij8v3")
+position = Vector2(576, 324)
+texture = ExtResource("9_7f42t")

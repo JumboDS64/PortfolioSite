@@ -1,18 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3ifx0l53kpqj"]
+[gd_scene format=3 uid="uid://d3ifx0l53kpqj"]
 
 [ext_resource type="Script" uid="uid://dw6p7w4w3268s" path="res://scenes/modes/mode_category.gd" id="1_ep24m"]
-[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/darkworld.tscn" id="2_37gao"]
+[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/world.tscn" id="2_37gao"]
 [ext_resource type="PackedScene" uid="uid://d0bvukphyye4y" path="res://scenes/widgets/category_menu.tscn" id="2_egq6i"]
 
-[node name="mode_category_null" type="Node"]
+[node name="mode_category_null" type="Node" unique_id=1967266288]
 script = ExtResource("1_ep24m")
 
-[node name="darkworld" parent="." instance=ExtResource("2_37gao")]
+[node name="cam2D" type="Camera2D" parent="." unique_id=1906856975]
+position = Vector2(576, 324)
 
-[node name="category_menu" parent="." instance=ExtResource("2_egq6i")]
+[node name="world" parent="cam2D" unique_id=1430244615 instance=ExtResource("2_37gao")]
+position = Vector2(-576, -324)
+
+[node name="category_menu" parent="." unique_id=1363895388 instance=ExtResource("2_egq6i")]
 tag = "null"
 
-[node name="focusFade" type="ColorRect" parent="."]
+[node name="focusFade" type="ColorRect" parent="." unique_id=1539317540]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0

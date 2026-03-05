@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjcrbj3jpe8y8"]
+
+[ext_resource type="Shader" uid="uid://2jvvjy32o1vu" path="res://scenes/gfx/warp.gdshader" id="1_361e0"]
+[ext_resource type="Texture2D" uid="uid://cuo1vfwjc4lti" path="res://assets/darksurface.png" id="2_jj6ch"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jj6ch"]
+shader = ExtResource("1_361e0")
+shader_parameter/img1 = ExtResource("2_jj6ch")
+shader_parameter/dir = 1.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jj6ch"]
+size = Vector2(1152, 648)
+
+[node name="warp" type="Node2D" unique_id=1963017413]
+
+[node name="sprite_2d" type="Sprite2D" parent="." unique_id=503395155]
+material = SubResource("ShaderMaterial_jj6ch")
+texture = SubResource("PlaceholderTexture2D_jj6ch")

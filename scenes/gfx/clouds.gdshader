@@ -28,5 +28,6 @@ void fragment() {
 										  wuv.y*3.0 + TIME/(60.0*timeDiv) - cam.y*0.25 + sin(TIME/(1.0*timeDiv) + wuv.x*10.0 - cam.y*0.25)/10.0)).x;
 	float vB2 = texture(darkclouds1, vec2(wuv.x*3.0 + TIME/(60.0*timeDiv),
 										  wuv.y*3.0 - TIME/(20.0*timeDiv)) - cam*0.5).x;
-	COLOR = vec4(1.0,1.0,1.0, (v1-v2 + clamp(v3-v4,0.0,1.0) + clamp(vB1-vB2,0.0,1.0))*2.0);
+	float v = clamp((v1-v2 + clamp(v3-v4,0.0,1.0) + clamp(vB1-vB2,0.0,1.0))*2.0,0.0,1.0);
+	COLOR = vec4(COLOR.r,COLOR.r,COLOR.r,v);
 }

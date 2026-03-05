@@ -1,4 +1,6 @@
 extends Mode
 
 func _ready():
-	pass
+	super._ready()
+func initPop():
+	Global.MAIN.call_deferred("trans_warp", 0.0)

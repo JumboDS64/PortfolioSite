@@ -1,46 +1,47 @@
 [gd_scene format=3 uid="uid://ce8gwym5rlmy8"]
 
 [ext_resource type="Script" uid="uid://61uakgsmmwx0" path="res://scenes/modes/mode_mainmenu.gd" id="1_x4u1v"]
-[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/darkworld.tscn" id="2_aiyik"]
+[ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/world.tscn" id="2_aiyik"]
 [ext_resource type="Script" uid="uid://ccmefr0i6tmtw" path="res://scenes/modes/selbar.gd" id="3_shc7w"]
 [ext_resource type="PackedScene" uid="uid://bh8kv4aela35l" path="res://scenes/entities_multiverse/universe.tscn" id="4_2qnw0"]
 
 [node name="mode_mainmenu" type="Node" unique_id=1110705265]
 script = ExtResource("1_x4u1v")
 
-[node name="camera_2d" type="Camera2D" parent="." unique_id=925793332]
-z_index = 4096
+[node name="cam2D" type="Camera2D" parent="." unique_id=1211370860]
+z_index = 100
 position = Vector2(576, 324)
 
-[node name="darkworld" parent="camera_2d" unique_id=1830379688 instance=ExtResource("2_aiyik")]
+[node name="world" parent="cam2D" unique_id=1830379688 instance=ExtResource("2_aiyik")]
 z_as_relative = false
 position = Vector2(-576, -324)
 
-[node name="button_skills" type="Button" parent="camera_2d" unique_id=73695524]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = -311.5
-offset_right = 28.0
-offset_bottom = -280.5
+[node name="label" type="Label" parent="cam2D" unique_id=1363354766]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -307.5
+offset_right = 20.0
+offset_bottom = -284.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 0
-text = "Skills
-"
+text = "Skills"
 
-[node name="button_projects" type="Button" parent="camera_2d" unique_id=153298330]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = 280.5
-offset_right = 28.0
-offset_bottom = 311.5
+[node name="label2" type="Label" parent="cam2D" unique_id=1560080536]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = 268.5
+offset_right = 31.5
+offset_bottom = 291.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 0
 text = "Projects"
 
 [node name="selbar_skills" type="Node2D" parent="." unique_id=1598485709]
@@ -69,6 +70,3 @@ category = "null"
 
 [node name="marker_2d" type="Marker2D" parent="." unique_id=1157589500]
 position = Vector2(712, 320)
-
-[connection signal="pressed" from="camera_2d/button_skills" to="." method="pressSkills"]
-[connection signal="pressed" from="camera_2d/button_projects" to="." method="pressProjects"]

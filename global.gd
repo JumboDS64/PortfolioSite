@@ -25,6 +25,8 @@ func _ready():
 	time = 0
 func mode():
 	return MAIN.mode
+func cam2D():
+	return get_viewport().get_camera_2d()
 
 func _process(delta):
 	time += delta
@@ -41,6 +43,7 @@ func load_data():
 		var json = JSON.new()
 		var file = FileAccess.open(dir.get_current_dir()+"/"+filename, FileAccess.ModeFlags.READ)
 		json.parse(file.get_as_text())
+		json.data["file"] = load(dir.get_current_dir()+"/"+na+"."+json.data["filetype"])
 		pieces[na] = json.data
 		if(piecesSorted_project.has(json.data["project"])): piecesSorted_project[json.data["project"]].append(na)
 		else: piecesSorted_project[json.data["project"]] = [na]

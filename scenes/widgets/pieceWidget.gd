@@ -23,7 +23,7 @@ func loadFromData(n:String):
 	#if(n == "fractal_block_world_3"): debug = true
 	match data["filetype"]:
 		"png":
-			$thumbnail/texture_rect.texture = load("res://assets/pieces/"+tag+".png")
+			$thumbnail/texture_rect.texture = data["file"]
 
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
 	if(event is InputEventMouseButton):

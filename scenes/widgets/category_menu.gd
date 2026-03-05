@@ -21,7 +21,7 @@ func _ready():
 	var list_cat = getData_category()
 	var counter = 0
 	for n in list_pie[tag]:
-		var widget = load("res://scenes/widgets/pieceWidget.tscn").instantiate()
+		var widget = preload("res://scenes/widgets/pieceWidget.tscn").instantiate()
 		$piecesCont/control.add_child(widget)
 		widget.loadFromData(n)
 		counter += 1
@@ -53,4 +53,4 @@ func _on_button_back_pressed() -> void:
 	if(focusedPiece != null):
 		unfocusPiece()
 	else:
-		Global.MAIN.set_mode("mainmenu")
+		Global.MAIN.trans_warp(1.0, -1.0, Global.MAIN.pop_mode)

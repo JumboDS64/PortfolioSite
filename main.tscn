@@ -2,9 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bv8qicp3v3iv7" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://c1pm4fhweffgs" path="res://scenes/modes/mode.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bjcrbj3jpe8y8" path="res://scenes/gfx/warp.tscn" id="3_h2yge"]
 
 [node name="main" type="Node" unique_id=1319787433]
 script = ExtResource("1_ig7tw")
 
 [node name="mode_none" type="Node" parent="." unique_id=421412656]
 script = ExtResource("2_0xm2m")
+
+[node name="cam2D" type="Camera2D" parent="mode_none" unique_id=119203553]
+position = Vector2(576, 324)
+
+[node name="uiGlobal" type="Node2D" parent="mode_none/cam2D" unique_id=1810075930]
+
+[node name="warp" parent="mode_none/cam2D/uiGlobal" unique_id=1963017413 instance=ExtResource("3_h2yge")]
+modulate = Color(1, 1, 1, 0)
+z_index = 200
