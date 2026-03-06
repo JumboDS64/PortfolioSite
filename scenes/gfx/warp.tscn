@@ -2,10 +2,12 @@
 
 [ext_resource type="Shader" uid="uid://2jvvjy32o1vu" path="res://scenes/gfx/warp.gdshader" id="1_361e0"]
 [ext_resource type="Texture2D" uid="uid://cuo1vfwjc4lti" path="res://assets/darksurface.png" id="2_jj6ch"]
+[ext_resource type="Texture2D" uid="uid://4uvlof2euy83" path="res://assets/warp.png" id="3_l5j8n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jj6ch"]
 shader = ExtResource("1_361e0")
 shader_parameter/img1 = ExtResource("2_jj6ch")
+shader_parameter/img2 = ExtResource("3_l5j8n")
 shader_parameter/dir = 1.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jj6ch"]

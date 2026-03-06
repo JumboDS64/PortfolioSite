@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://n5ipliavk46y" path="res://assets/themes/theme_base.tres" id="2_tai5y"]
 [ext_resource type="Texture2D" uid="uid://drba8berdvhsl" path="res://assets/themes/null_ui.png" id="3_hjhfu"]
 [ext_resource type="Texture2D" uid="uid://db2x4h50eusdo" path="res://assets/themes/null_back.png" id="4_hjhfu"]
+[ext_resource type="Script" uid="uid://bucep86xh2fx7" path="res://scenes/widgets/image_view_cont.gd" id="4_nwf11"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwf11"]
 atlas = ExtResource("4_hjhfu")
@@ -58,6 +59,7 @@ offset_left = 352.0
 offset_top = 32.0
 offset_right = 1120.0
 offset_bottom = 480.0
+script = ExtResource("4_nwf11")
 
 [node name="imageView" type="Control" parent="imageViewCont" unique_id=1294570223]
 layout_mode = 2

@@ -46,7 +46,9 @@ func tween_focus():
 	tween.tween_callback(tween_focus_cb)
 func tween_focus_cb():
 	category_menu.desc.text = Global.pieces[tag]["description"]
+	category_menu.imageViewCont.imageStable = true
 func tween_unfocus():
+	category_menu.imageViewCont.imageStable = false
 	tween = get_tree().create_tween()
 	tween.set_trans(Tween.TransitionType.TRANS_QUART)
 	tween.set_ease(Tween.EaseType.EASE_OUT)
