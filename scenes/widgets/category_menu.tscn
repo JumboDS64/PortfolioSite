@@ -52,7 +52,7 @@ offset_top = 160.0
 offset_right = 304.0
 offset_bottom = 392.0
 
-[node name="imageViewCont" type="ScrollContainer" parent="." unique_id=2015997397]
+[node name="mediaViewCont" type="ScrollContainer" parent="." unique_id=2015997397]
 visible = false
 layout_mode = 0
 offset_left = 352.0
@@ -61,10 +61,10 @@ offset_right = 1120.0
 offset_bottom = 480.0
 script = ExtResource("4_nwf11")
 
-[node name="imageView" type="Control" parent="imageViewCont" unique_id=1294570223]
+[node name="mediaView" type="Control" parent="mediaViewCont" unique_id=1294570223]
 layout_mode = 2
 
-[node name="imageAnchor" type="Control" parent="imageViewCont/imageView" unique_id=1520151895]
+[node name="mediaAnchor" type="Control" parent="mediaViewCont/mediaView" unique_id=1520151895]
 anchors_preset = 0
 offset_left = 384.0
 offset_top = 224.0

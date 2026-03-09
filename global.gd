@@ -20,6 +20,8 @@ var rng = RandomNumberGenerator.new()
 
 var time = 0
 
+const GRAVITY = 1000
+
 func _ready():
 	MAIN = get_node("/root/main")
 	time = 0

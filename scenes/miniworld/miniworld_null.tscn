@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c5olg1n6k007v"]
+
+[ext_resource type="Script" uid="uid://bibcdfh671bve" path="res://scenes/miniworld/room.gd" id="1_0txfj"]
+[ext_resource type="Texture2D" uid="uid://cs8iws1ihin0d" path="res://assets/miniworld/worlds/null_ground.png" id="1_e1tao"]
+[ext_resource type="PackedScene" uid="uid://cebfv0n7x8bul" path="res://scenes/miniworld/character_temp.tscn" id="2_jrdju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1tao"]
+size = Vector2(1280, 56)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0txfj"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tmkit"]
+normal = Vector2(-1, 0)
+
+[node name="miniworld_null" type="Node2D" unique_id=1340193622]
+script = ExtResource("1_0txfj")
+
+[node name="null_ground" type="Sprite2D" parent="." unique_id=1180883409]
+position = Vector2(0, -64)
+texture = ExtResource("1_e1tao")
+
+[node name="static_body_2d" type="StaticBody2D" parent="." unique_id=733828783]
+
+[node name="floor" type="CollisionShape2D" parent="static_body_2d" unique_id=1977606937]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_e1tao")
+
+[node name="wallL" type="CollisionShape2D" parent="static_body_2d" unique_id=189111320]
+position = Vector2(-576.5, -96)
+shape = SubResource("WorldBoundaryShape2D_0txfj")
+
+[node name="wallR" type="CollisionShape2D" parent="static_body_2d" unique_id=2082331747]
+position = Vector2(576, -96)
+shape = SubResource("WorldBoundaryShape2D_tmkit")
+
+[node name="character_temp" parent="." unique_id=645041331 instance=ExtResource("2_jrdju")]
+position = Vector2(-104, -16)

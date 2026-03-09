@@ -7,15 +7,15 @@ var focusedPiece = null
 var tween
 var piecesCont
 var desc
-var imageViewCont
-var imageAnchor
+var mediaViewCont
+var mediaAnchor
 
 func _ready():
 	mode = $".."
 	piecesCont = $piecesCont
 	desc = $desc
-	imageViewCont = $imageViewCont
-	imageAnchor = $imageViewCont/imageView/imageAnchor
+	mediaViewCont = $mediaViewCont
+	mediaAnchor = $mediaViewCont/mediaView/mediaAnchor
 	$frame.texture = load("res://assets/themes/"+tag+"_ui.png")
 	var list_pie = getData_pieces()
 	var list_cat = getData_category()

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bh8kv4aela35l"]
+
+[ext_resource type="Script" uid="uid://dyks5l2mrenew" path="res://scenes/widgets/universe.gd" id="1_72fdd"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_72fdd"]
+size = Vector2(192, 192)
+
+[node name="universe" type="Node2D" unique_id=842728187]
+script = ExtResource("1_72fdd")
+
+[node name="sprite_2d" type="Sprite2D" parent="." unique_id=2023251694]
+scale = Vector2(1.3333334, 1.3333334)
+texture = SubResource("PlaceholderTexture2D_72fdd")

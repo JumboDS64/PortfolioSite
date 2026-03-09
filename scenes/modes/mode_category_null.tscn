@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dw6p7w4w3268s" path="res://scenes/modes/mode_category.gd" id="1_ep24m"]
 [ext_resource type="PackedScene" uid="uid://df0xomm3hogj5" path="res://scenes/gfx/world.tscn" id="2_37gao"]
 [ext_resource type="PackedScene" uid="uid://d0bvukphyye4y" path="res://scenes/widgets/category_menu.tscn" id="2_egq6i"]
+[ext_resource type="PackedScene" uid="uid://c5olg1n6k007v" path="res://scenes/miniworld/miniworld_null.tscn" id="4_55gj2"]
 
 [node name="mode_category_null" type="Node" unique_id=1967266288]
 script = ExtResource("1_ep24m")
@@ -25,3 +26,6 @@ offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="miniworld_null" parent="." unique_id=1340193622 instance=ExtResource("4_55gj2")]
+position = Vector2(576, 640)

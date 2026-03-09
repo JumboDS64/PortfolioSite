@@ -35,20 +35,20 @@ func _on_texture_rect_gui_input(event: InputEvent) -> void:
 					category_menu.unfocusPiece()
 
 func tween_focus():
-	category_menu.imageViewCont.visible = true
-	thumb.reparent(category_menu.imageAnchor)
+	category_menu.mediaViewCont.visible = true
+	thumb.reparent(category_menu.mediaAnchor)
 	tween = get_tree().create_tween()
 	tween.set_trans(Tween.TransitionType.TRANS_QUART)
 	tween.set_ease(Tween.EaseType.EASE_OUT)
-	tween.tween_property(thumb, "global_position", category_menu.imageAnchor.global_position-Vector2(64*TWEENSCALE,64*TWEENSCALE), TWEENTIME)
+	tween.tween_property(thumb, "global_position", category_menu.mediaAnchor.global_position-Vector2(64*TWEENSCALE,64*TWEENSCALE), TWEENTIME)
 	tween.parallel().tween_property(thumb, "scale", Vector2(TWEENSCALE,TWEENSCALE), TWEENTIME)
 	tween.parallel().tween_property(category_menu.piecesCont, "modulate", Color(1.0, 1.0, 1.0, 0.0), TWEENTIME)
 	tween.tween_callback(tween_focus_cb)
 func tween_focus_cb():
 	category_menu.desc.text = Global.pieces[tag]["description"]
-	category_menu.imageViewCont.imageStable = true
+	category_menu.mediaViewCont.mediaStable = true
 func tween_unfocus():
-	category_menu.imageViewCont.imageStable = false
+	category_menu.mediaViewCont.mediaStable = false
 	tween = get_tree().create_tween()
 	tween.set_trans(Tween.TransitionType.TRANS_QUART)
 	tween.set_ease(Tween.EaseType.EASE_OUT)
@@ -60,6 +60,6 @@ func tween_unfocus_cb():
 	thumb.reparent(self)
 	thumb.position = Vector2(56.0, 8.0)
 	thumb.scale = Vector2(1.0, 1.0)
-	category_menu.imageViewCont.visible = false
+	category_menu.mediaViewCont.visible = false
 	category_menu.desc.text = category_menu.getData_category()[category_menu.tag]["description"]
 	

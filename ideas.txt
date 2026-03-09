@@ -1,0 +1,2 @@
+.tscn files in data
+- .tscn that's an automated version of the "glass snout" effect as seen here https://www.youtube.com/watch?v=p7DYZ_SRgI0
