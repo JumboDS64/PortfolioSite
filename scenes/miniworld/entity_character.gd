@@ -2,6 +2,7 @@
 extends Entity
 
 @export var texture:Texture2D
+@export var eyes:Array[FeatureEye]
 
 func _ready():
 	initGFX()
@@ -14,6 +15,8 @@ func _physics_process(delta):
 func _process(delta):
 	if(Engine.is_editor_hint()):
 		initGFX()
+	for e in eyes:
+		e.look(get_viewport().get_mouse_position())
 
 func initGFX():
 	$sprite/polys/arm_b.texture = texture

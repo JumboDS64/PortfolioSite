@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://vrsg3e2nvwtj"]
+
+[ext_resource type="Script" uid="uid://n3sib23x2srv" path="res://scenes/miniworld/widget_eye.gd" id="1_1dcv4"]
+[ext_resource type="Texture2D" uid="uid://etm2dt628kr6" path="res://assets/miniworld/characters/temp.png" id="2_gax0e"]
+[ext_resource type="Shader" uid="uid://c0axqj6wj16h1" path="res://scenes/miniworld/chromaKey.gdshader" id="3_ywaka"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_es0lu"]
+shader = ExtResource("3_ywaka")
+shader_parameter/color = Color(1, 0, 1, 1)
+
+[node name="widget_eye" type="Node2D" unique_id=1723327899]
+script = ExtResource("1_1dcv4")
+texture = ExtResource("2_gax0e")
+textureUV = Vector2(128, 0)
+textureScale = 32
+bounds = Vector2(2, 2)
+browRest = Vector2(0, -7)
+gazeDist = 1.0
+
+[node name="inner" type="Sprite2D" parent="." unique_id=684720133]
+clip_children = 1
+texture = ExtResource("2_gax0e")
+region_enabled = true
+region_rect = Rect2(128, 0, 32, 32)
+
+[node name="ball" type="Sprite2D" parent="inner" unique_id=1316817611]
+position = Vector2(2, 0)
+texture = ExtResource("2_gax0e")
+region_enabled = true
+region_rect = Rect2(128, 32, 32, 32)
+
+[node name="frame" type="Sprite2D" parent="." unique_id=702114737]
+material = SubResource("ShaderMaterial_es0lu")
+texture = ExtResource("2_gax0e")
+region_enabled = true
+region_rect = Rect2(128, 0, 32, 32)
+
+[node name="brow" type="Sprite2D" parent="." unique_id=715931492]
+position = Vector2(0, -7)
+texture = ExtResource("2_gax0e")
+region_enabled = true
+region_rect = Rect2(160, 32, 32, 32)

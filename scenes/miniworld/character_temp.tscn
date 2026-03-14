@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bs778vt4tbh5n" path="res://scenes/miniworld/entity_character.gd" id="1_crvl0"]
 [ext_resource type="Texture2D" uid="uid://cfgorowdmb16c" path="res://assets/miniworld/characters/cain.png" id="2_xb516"]
 [ext_resource type="Script" uid="uid://di8x4m2nh8wo" path="res://scenes/miniworld/state_wander.gd" id="3_b2ck7"]
+[ext_resource type="PackedScene" uid="uid://vrsg3e2nvwtj" path="res://scenes/miniworld/widget_eye.tscn" id="3_xb516"]
+[ext_resource type="PackedScene" uid="uid://be32duv2mp4eb" path="res://scenes/miniworld/widget_mouth.tscn" id="4_ecg4q"]
 [ext_resource type="Script" uid="uid://k1medwb31afx" path="res://scenes/miniworld/state_dragged.gd" id="4_k2ql5"]
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_crvl0"]
@@ -409,11 +411,12 @@ _data = {
 radius = 16.0
 height = 64.0
 
-[node name="character_temp" type="CharacterBody2D" unique_id=645041331]
+[node name="character_temp" type="CharacterBody2D" unique_id=645041331 node_paths=PackedStringArray("eyes")]
 collision_layer = 18
 input_pickable = true
 script = ExtResource("1_crvl0")
 texture = ExtResource("2_xb516")
+eyes = [NodePath("sprite/skeleton/torso/head/widget_eye"), NodePath("sprite/skeleton/torso/head/widget_eye2")]
 
 [node name="sprite" type="Node2D" parent="." unique_id=1117610165]
 
@@ -476,25 +479,49 @@ bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head", P
 internal_vertex_count = 1
 
 [node name="skeleton" type="Skeleton2D" parent="sprite" unique_id=542832444]
-visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_b2ck7")
 
 [node name="torso" type="Bone2D" parent="sprite/skeleton" unique_id=1380687954]
 position = Vector2(0, -23)
-scale = Vector2(0.99987894, 0.99987894)
+scale = Vector2(0.9998677, 0.9998677)
 rest = Transform2D(1, 0, 0, 1, 0, -23)
 
 [node name="head" type="Bone2D" parent="sprite/skeleton/torso" unique_id=481349383]
 position = Vector2(0, -7)
-scale = Vector2(0.9999336, 0.9999336)
+scale = Vector2(0.99991447, 0.99991447)
 rest = Transform2D(1, 0, 0, 1, 0, -7)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = -90.0
 
+[node name="widget_eye" parent="sprite/skeleton/torso/head" unique_id=1723327899 instance=ExtResource("3_xb516")]
+position = Vector2(-1, -25)
+scale = Vector2(1.0002167, 1.0002167)
+texture = ExtResource("2_xb516")
+bounds = Vector2(3, 5)
+browRest = Vector2(0, -10)
+gazeAngle = 0.0726438
+
+[node name="widget_eye2" parent="sprite/skeleton/torso/head" unique_id=1880318758 instance=ExtResource("3_xb516")]
+position = Vector2(10.002398, -25)
+scale = Vector2(1.0002167, 1.0002167)
+texture = ExtResource("2_xb516")
+textureUV = Vector2(192, 0)
+bounds = Vector2(2, 5)
+browRest = Vector2(0, -10)
+gazeAngle = 0.09032224
+
+[node name="widget_mouth" parent="sprite/skeleton/torso/head" unique_id=1897656451 instance=ExtResource("4_ecg4q")]
+position = Vector2(11.002396, -6.0022345)
+texture = ExtResource("2_xb516")
+rangeLeft = 12.0
+rangeRight = 12.0
+smileU = 0.1
+smileB = 0.1
+
 [node name="armUpper_b" type="Bone2D" parent="sprite/skeleton/torso" unique_id=1520799152]
 position = Vector2(11.999694, -3)
-rotation = -1.8952474e-05
+rotation = -3.051313e-05
 rest = Transform2D(1, 0, 0, 1, 15, -3)
 metadata/_local_pose_override_enabled_ = true
 
@@ -515,7 +542,7 @@ bone_angle = 0.0
 
 [node name="legUpper_b" type="Bone2D" parent="sprite/skeleton/torso" unique_id=1680859811]
 position = Vector2(4.9996967, 7)
-rotation = -0.226846
+rotation = -7.4148185e-05
 rest = Transform2D(1, 0, 0, 1, 8, 7)
 metadata/_local_pose_override_enabled_ = true
 
@@ -536,7 +563,7 @@ bone_angle = 0.0
 
 [node name="legUpper_f" type="Bone2D" parent="sprite/skeleton/torso" unique_id=897976565]
 position = Vector2(-4.9996967, 7)
-rotation = 0.22684588
+rotation = 7.414818e-05
 scale = Vector2(0.99999744, 0.99999744)
 rest = Transform2D(1, 0, 0, 1, -8, 7)
 metadata/_local_pose_override_enabled_ = true
@@ -558,7 +585,7 @@ bone_angle = 0.0
 
 [node name="armUpper_f" type="Bone2D" parent="sprite/skeleton/torso" unique_id=81139144]
 position = Vector2(-11.999696, -3)
-rotation = 1.8421804e-05
+rotation = 3.0040741e-05
 rest = Transform2D(1, 0, 0, 1, -15, -3)
 metadata/_local_pose_override_enabled_ = true
 

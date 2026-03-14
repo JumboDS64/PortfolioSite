@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://be32duv2mp4eb"]
+
+[ext_resource type="Script" uid="uid://wsuiyabyf8jl" path="res://scenes/miniworld/widget_mouth.gd" id="1_pmdn3"]
+[ext_resource type="Texture2D" uid="uid://etm2dt628kr6" path="res://assets/miniworld/characters/temp.png" id="2_em4qy"]
+[ext_resource type="Shader" uid="uid://bbjfhqqkutx0l" path="res://scenes/miniworld/smiler.gdshader" id="3_iiduk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2nwp"]
+resource_local_to_scene = true
+shader = ExtResource("3_iiduk")
+shader_parameter/offU = 0.08
+shader_parameter/offB = 0.4
+shader_parameter/uvP = Vector2(0.5, 0.25)
+shader_parameter/uvS = Vector2(0.125, 0.25)
+shader_parameter/p = Vector2(0.00390625, 0.00390625)
+shader_parameter/rangeLeft = 4.0
+shader_parameter/rangeRight = 4.0
+shader_parameter/innerColor = Color(1, 0, 1, 1)
+
+[node name="widget_mouth" type="Node2D" unique_id=1897656451]
+script = ExtResource("1_pmdn3")
+texture = ExtResource("2_em4qy")
+textureUV = Vector2(128, 64)
+textureScale = Vector2(32, 32)
+rangeLeft = 4.0
+rangeRight = 4.0
+smileU = 0.2
+smileB = 1.0
+
+[node name="mouth" type="Sprite2D" parent="." unique_id=1640701925]
+material = SubResource("ShaderMaterial_b2nwp")
+texture = ExtResource("2_em4qy")
+region_enabled = true
+region_rect = Rect2(128, 64, 32, 64)
